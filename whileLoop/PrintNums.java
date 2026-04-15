@@ -65,7 +65,7 @@ public class PrintNums {
          }
          */
 
-        /*6. Calculate and print the sum of the first n natural numbers. */
+        /*6. Calculate and print the sum of the first n natural numbers. 
 
         System.out.print("Enter the value of n: ");
         Scanner sc = new Scanner(System.in);
@@ -77,6 +77,64 @@ public class PrintNums {
             sum = sum +i;
             i++;
         }
-        System.out.println(sum);;
+        System.out.println(sum);
+        */
+
+        /*7.Calculate the sum of all even numbers from 1 up to n 
+
+        System.out.print("Enter the value of n: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int i =2;
+        int EvenSum =0;
+        while(i <=n){
+            EvenSum = EvenSum +i;
+            i= i+2;
+        }
+        System.out.println(EvenSum);
+        */
+
+        /*8.Calculate the sum of all odd numbers from 1 up to n. 
+
+        System.out.print("Enter the value of n: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int i =1;
+        int OddSum =0;
+        while(i <=n){
+            OddSum = OddSum +i;
+            i= i+2;
+        }
+        System.out.println(OddSum);
+        */
+       /*9. Calculate and print the factorial of a given number 
+
+        System.out.print("Enter the value of n: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+       
+        int i=1;
+        int ans = 1;
+        while(i<=n){
+           ans = ans*i;
+           i++;
+        }
+        System.out.println(ans);
+        */
+/*10. Find and print the product of all digits of a given number */
+
+        int n = 456;
+        int ld =1;
+        int res = 1;
+        while(n!=0){
+            ld = n%10;
+            res = res*ld;
+            n = n/10;
+        }
+        System.out.println(res);
+
     }
 }

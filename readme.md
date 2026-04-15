@@ -195,3 +195,9 @@ double b = sc.nextDouble();  // decimal
 String word = sc.next();     // single word
 String line = sc.nextLine(); // full line
 char ch = sc.next().charAt(0); // single character
+
+
+🧠 Key Concepts 
+% 10 → extract last digit 
+/ 10 → remove last digit 
+
