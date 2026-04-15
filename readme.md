@@ -1,203 +1,183 @@
+# 📘 Java Basics – Day 1 Notes
+🧮 Simple Calculator (Input Handling)
+Operator cannot be stored in int because it is a character
+To take a character input:
+char op = sc.next().charAt(0);
 
-# Simple Calculator
-
-operand cannot be stored in int since it is a char and to access character ww write
-op = sc.next().charAt(0);
-🔹 1. next()
+🔹 Scanner Methods
+1. next()
 Reads only one word (stops at space)
 Ignores leading spaces
 String name = sc.next();
-🔹 2. nextInt()
+
+2. nextInt()
 Reads an integer value
-Does not consume the newline (\n) after the number
+❗ Does NOT consume the newline (\n)
 int age = sc.nextInt();
-🔹 3. nextLine()
+
+3. nextLine()
 Reads the entire line (including spaces)
-Stops only when it finds a newline (Enter)
+Stops at newline (Enter)
 String fullName = sc.nextLine();
 
-
-# While Loop
+🔁 While Loop
 int i;
 while(i <= 10)
-You declared i but never initialized it.
 
-In Java, local variables are not given default values, so i contains garbage data → this leads to a compile-time error:
 
-❌ "variable i might not have been initialized"
+❌ Problem:
 
-✅ Fix:
-Initialize i before using it:
+i is declared but not initialized
+
+👉 In Java:
+
+Local variables do NOT get default values
+Leads to compile-time error:
+"variable i might not have been initialized"
+
+✅ Fix
 int i = 1;
 while(i <= 10)
 
-💡 Extra Insight:
-If Java allowed this, your loop could:
-Run infinitely
-Skip execution
-Crash unpredictably
-So Java prevents it at compile time itself.
+💡 Insight
 
+If Java allowed uninitialized variables, it could cause:
+
+Infinite loops
+Skipped execution
+Unpredictable crashes
+
+👉 That’s why Java stops it at compile time.
+
+⚙️ Java Execution Flow
 Step 1: Write Code
         ↓
-   PrintNums.java   (your code)
+   PrintNums.java
 
 Step 2: Compile (javac)
         ↓
-   PrintNums.class  (bytecode)
+   PrintNums.class (bytecode)
 
-Step 3: JVM Execution (java)
+Step 3: Run (java)
         ↓
-   JVM loads + verifies + executes
+   JVM executes
 
 Step 4: Output
         ↓
-   Printed result on console
+   Console result
 
-
-🔹 1. You write code
+🔹 Example Code
 public class PrintNums {
     public static void main(String[] args) {
         System.out.println("Hello");
     }
 }
 
-🔹 2. Compilation (javac)
+🔹 Compilation
 javac PrintNums.java
 
-👉 Converts:
-Human-readable code → Bytecode (.class) machine readable code
 
-🔹 3. JVM runs (java)
+👉 Converts:
+
+Human-readable code → Bytecode (.class)
+🔹 Execution
 java PrintNums
 
-Inside JVM:
+🔄 Inside JVM
 .class file
    ↓
-Class Loader  (loads file)
+Class Loader
    ↓
-Bytecode Verifier (checks safety)
+Bytecode Verifier
    ↓
 Interpreter / JIT Compiler
    ↓
-Machine Code (executed)
+Machine Code
+   ↓
+Output
 
-⚡ Full Flow (Detailed)
-PrintNums.java
-      ↓  (javac)
-PrintNums.class (bytecode)
-      ↓  (java)
-JVM
- ├── Class Loader
- ├── Bytecode Verifier
- ├── Interpreter / JIT
-      ↓
-Output on Console
+🌍 Platform Independence
+.class (bytecode) → same everywhere
+JVM → different for each OS
 
-💡 Why Java is platform independent
-.class (bytecode) is same everywhere
-JVM is different for each OS
+👉 Write Once, Run Anywhere
 
-👉 So:
+🎯 Memory Trick
+javac → compile
+java  → run
 
-Write once → Run anywhere
-
-🎯 One-line memory trick
-
-javac → converts code
-java → runs code using JVM
-
-
-🔹 Interpreter vs JIT (in JVM)
-🔸 1. Interpreter
-
-👉 Works like this:
-
-Reads bytecode line by line
-Converts it to machine code
-Executes immediately
-Bytecode → (line by line) → Machine code → Output
+⚡ Interpreter vs JIT
+🔸 Interpreter
+Executes bytecode line by line
+Bytecode → Machine Code → Output
 
 ✅ Pros:
-Fast to start (no waiting)
-Simple execution
+Fast startup
+Simple
 ❌ Cons:
-Slow for large programs (repeats conversion again & again)
-🔸 2. JIT (Just-In-Time Compiler)
-
-👉 Works like this:
-
-Detects frequently used code (hot code)
-Compiles that part into native machine code once
-Reuses it
-Bytecode → JIT → Native Machine Code (stored) → Fast execution
+Slow for repeated code
+🔸 JIT (Just-In-Time Compiler)
+Compiles frequently used (hot) code
+Converts it into native machine code
+Bytecode → JIT → Native Code → Fast execution
 
 ✅ Pros:
-Very fast execution
-Optimizes performance
+High performance
+Optimized execution
 ❌ Cons:
-Takes time initially (compilation overhead)
-⚡ Key Difference
-Feature	Interpreter	JIT Compiler
-Execution	Line by line	Compiles chunks
+Initial delay
+⚖️ Difference
+Feature	Interpreter	JIT
+Execution	Line-by-line	Compiles blocks
 Speed	Slower	Faster
 Startup	Fast	Slight delay
 Optimization	No	Yes
-🔥 How JVM Uses BOTH (important!)
+🔥 How JVM Uses Both
+1. Interpreter starts execution
+2. JVM tracks frequently used code
+3. Marks it as "Hot Code"
+4. JIT compiles it
+5. Execution becomes faster
 
-Java doesn’t choose one — it uses both together:
+🔥 Hot Code
+Definition:
+Code that runs frequently
+Example: loops, repeated methods
+How JVM Detects It
+Uses execution counters
+method calls ↑
+loop runs ↑
 
-Step 1: Interpreter starts execution (quick start)
-Step 2: JVM detects repeated code
-Step 3: JIT compiles that code
-Step 4: Execution becomes faster
+If threshold is crossed:
+👉 Marked as Hot Code
 
+👉 JIT compiles it for faster execution
 
-👉 This is why Java is:
+🎯 One-line
 
-Fast (because of JIT)
-Flexible (because of Interpreter)
-🧠 Real-life analogy
-Interpreter = reading and translating a book line-by-line every time 📖
-JIT = translating the whole chapter once and reusing it ⚡
-🎯 One-line answer (for interviews)
+Hot code is frequently executed code that JVM optimizes using JIT.
 
-Interpreter executes bytecode line-by-line, while JIT compiles frequently used bytecode into native machine code to improve performance.
-
-🔥 What is “Hot Code” (short & clear)
-
-Hot code = code that runs again and again
-👉 Example: loops, frequently called methods
-
-⚙️ How JVM decides it
-
-JVM keeps a counter for methods/loops:
-
-method call count ↑
-loop execution count ↑
-
-If a piece of code crosses a certain threshold
-JVM marks it as “hot”
-
-👉 Then JIT compiles it into native machine code for faster execution
-
-🧠 Super simple flow
-Code runs → JVM tracks usage → crosses limit → marked HOT → JIT compiles → faster
-
-🎯 One-line answer
-
-Hot code is frequently executed code, and JVM detects it using execution counters and compiles it with JIT for better performance.
-
+📥 Scanner Input Examples
 Scanner sc = new Scanner(System.in);
 
-int a = sc.nextInt();        // integer
-double b = sc.nextDouble();  // decimal
-String word = sc.next();     // single word
-String line = sc.nextLine(); // full line
-char ch = sc.next().charAt(0); // single character
+int a = sc.nextInt();          // integer
+double b = sc.nextDouble();    // decimal
+String word = sc.next();       // single word
+String line = sc.nextLine();   // full line
+char ch = sc.next().charAt(0); // character
 
+🔢 Digit Extraction Logic
+🧠 Key Concepts
+% 10 → extract last digit
+/ 10 → remove last digit
+🔄 Example Flow
+n = 456
 
-🧠 Key Concepts 
-% 10 → extract last digit 
-/ 10 → remove last digit 
+456 % 10 = 6
+456 / 10 = 45
 
+45 % 10 = 5
+45 / 10 = 4
+
+4 % 10 = 4
+4 / 10 = 0
