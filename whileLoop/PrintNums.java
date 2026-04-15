@@ -124,7 +124,7 @@ public class PrintNums {
         }
         System.out.println(ans);
         */
-/*10. Find and print the product of all digits of a given number */
+/*10. Find and print the product of all digits of a given number 
 
         int n = 456;
         int ld =1;
@@ -135,6 +135,34 @@ public class PrintNums {
             n = n/10;
         }
         System.out.println(res);
+*/
+
+        /* 11. Count and print the total number of digits in a given number
+
+        int n = 45665436;
+        int i =1;
+        int count =0;
+        while(n!=0){
+            int ld = n % 10;
+            count++;
+            n = n/10;
+        }
+        System.out.println(count);
+        */
+         
+/*12. Reverse the given number and print the reversed value. */
+
+int n = 456;
+
+int i =1;
+int rev ;
+while(n!=0){
+int ld = n%10;
+int rev = ld + n;
+n = n/10;
+
+}
+System.out.println(rev);
 
     }
 }
