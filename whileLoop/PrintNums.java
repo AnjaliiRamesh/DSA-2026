@@ -150,7 +150,7 @@ public class PrintNums {
         System.out.println(count);
         */
          
-/*12. Reverse the given number and print the reversed value. */
+/*12. Reverse the given number and print the reversed value. 
 
  int n = 456;
         int rev = 0;
@@ -163,5 +163,65 @@ public class PrintNums {
 
         System.out.println(rev);
 
+        */
+
+        /* 13.Check whether the given number is a palindrome 
+
+        int n = 121;
+        int original = n;
+        int reverse = 0;
+
+        while (n != 0) {
+            int ld = n % 10;
+            reverse = reverse * 10 + ld;
+            n = n / 10;
+        }
+
+        if (original == reverse) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
+        */
+       /*14. Find and print the sum of digits of the given number.
+
+       int n = 2345;
+       int sum =0;
+       while(n!=0){
+        int ld = n%10;
+        sum  = sum + ld;
+        n = n/10;
+       }
+       System.out.println(sum);
+
+        */
+
+       /*15.Check whether the given number is an Armstrong number
+       🧠 Simple idea
+
+Take a number →
+
+Count how many digits it has
+Take each digit
+Raise it to that count
+Add all the results
+
+If the final sum equals the original number → Armstrong number
+
+       */
+      
+    int n = 153;
+    int original = n;
+    int num ;
+    int count =0;
+
+    while(n!=0){
+        count++;
+        n = n/10;
+
     }
+
+    int ld = n%10;
+    num = ld * count  + num;
+
 }
