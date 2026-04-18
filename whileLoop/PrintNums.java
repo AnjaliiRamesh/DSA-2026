@@ -205,23 +205,58 @@ Count how many digits it has
 Take each digit
 Raise it to that count
 Add all the results
-
 If the final sum equals the original number → Armstrong number
 
-       */
-      
-    int n = 153;
-    int original = n;
-    int num ;
-    int count =0;
+    
+        int n = 143;
+        int original = n;
 
-    while(n!=0){
-        count++;
-        n = n/10;
+        // Step 1: Count digits
+        int count = 0;
+        int temp = n;
+        while (temp != 0) {
+            count++;
+            temp /= 10;
+        }
 
-    }
+        // Step 2: Calculate sum of powers
+        int sum = 0;
+        temp = n;
+        while (temp != 0) {
+            int ld = temp % 10;
+            sum += (int) Math.pow(ld, count);
+            temp /= 10;
+        }
 
-    int ld = n%10;
-    num = ld * count  + num;
+        // Step 3: Check
+        if (sum == original) {
+            System.out.println("Armstrong Number");
+        } else {
+            System.out.println("Not an Armstrong Number");
+        }
+    
+    */
 
+        /*15. Check whether the given number is a Perfect number 
+
+        int n = 15; 
+        int i = 1;
+
+        int sum = 0;
+        while(i<n){
+            if(n %i ==0){
+                sum += i;
+            
+            }
+            i++;
+        }
+        if(sum == n){
+            System.out.println("perfect number");
+        }else{
+            System.out.println("not perfect");
+        }
+
+        */
+
+}
 }
