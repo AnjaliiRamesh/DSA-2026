@@ -152,17 +152,16 @@ public class PrintNums {
          
 /*12. Reverse the given number and print the reversed value. */
 
-int n = 456;
+ int n = 456;
+        int rev = 0;
 
-int i =1;
-int rev ;
-while(n!=0){
-int ld = n%10;
-int rev = ld + n;
-n = n/10;
+        while (n != 0) {
+            int ld = n % 10;
+            rev = rev * 10 + ld;
+            n = n / 10;
+        }
 
-}
-System.out.println(rev);
+        System.out.println(rev);
 
     }
 }
