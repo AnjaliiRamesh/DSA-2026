@@ -256,7 +256,61 @@ If the final sum equals the original number → Armstrong number
             System.out.println("not perfect");
         }
 
+        Optimised version
+         if (n <= 1) return false;
+
+        int sum = 1; // 1 is always a divisor
+
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                sum += i;
+
+                if (i != n / i) {
+                    sum += n / i;
+                }
+            }
+        }
+
+        return sum == n;
+    }
+
         */
 
+    /*17. Print all prime numbers between 1 and 100 */
+
+    /*18. Check whether the given number is a prime number. 
+int n = 15;
+boolean isPrime = true;
+if(n ==0 || n==1){
+    System.out.println("not prime");
+    return;
+}
+    for(int i = 2; i*i<=n; i++){
+        if(n%i==0){
+            isPrime = false;
+            break;
+        }
+    }
+   if(isPrime){
+    System.out.println("prime");
+   }
+   else{
+    System.out.println("not prime");
+   }
+*/
+
+for (int n = 2; n <= 20; n++) {
+
+    int i;
+    for (i = 2; i * i <= n; i++) {
+        if (n % i == 0) break;
+    }
+
+    if (i * i > n) {
+        System.out.print(n + " ");
+    }
+}
+
+   
 }
 }
