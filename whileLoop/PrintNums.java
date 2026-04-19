@@ -237,7 +237,7 @@ If the final sum equals the original number → Armstrong number
     
     */
 
-        /*15. Check whether the given number is a Perfect number 
+        /*16. Check whether the given number is a Perfect number 
 
         int n = 15; 
         int i = 1;
@@ -297,7 +297,7 @@ if(n ==0 || n==1){
    else{
     System.out.println("not prime");
    }
-*/
+
 
 for (int n = 2; n <= 20; n++) {
 
@@ -310,7 +310,107 @@ for (int n = 2; n <= 20; n++) {
         System.out.print(n + " ");
     }
 }
+*/
 
-   
+
+/* Armstring revisiting 
+int num = 143;
+int original = num;
+
+
+int count = 0;
+int temp = num;
+
+while( temp != 0){
+    count ++;
+    temp = temp/10;
+}
+int sum = 0;
+temp = num;
+while(temp !=0){
+    int ld = temp % 10;
+sum += (int)Math.pow(ld, count);
+temp = temp /10;
+}
+
+   if(original == sum){
+    System.out.println("armstrong");
+   }
+   else{
+    System.out.println(
+       "not armstrong" 
+    );
+   }
+
+   */
+  /* revisiting perfect number 
+
+  int n = 28;
+  int sum =1;
+//   int i=2;//1 is always divisor
+  for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0) {
+                sum += i;
+
+                if (i != n / i) {
+                    sum += n / i;
+                }
+            }
+        }  
+  
+  if(n == sum){
+    System.out.println("perfect");
+  }else{
+    System.out.println("not perfect");
+  }
+*/
+
+/*Revisiting reverse number 
+
+int n = 143;
+int org = n;
+int rev = 0;
+while(n!=0){
+    int ld = n % 10;
+    rev = (rev *10) + ld;
+    n = n/10;
+}
+System.out.println(org);
+System.out.println(rev);
+
+*/
+/*check prime or not revisiting
+
+ 
+
+int n = 19;
+int i = 2;
+int flag = 0;
+while(i<n){
+    if(n % i == 0){
+        flag = 1;
+        break;
+    }
+    i++;
+}
+if(flag == 0){
+System.out.println("prime");
+}
+else{
+    System.out.println("not prime");
+}
+*/
+/*Priniting prime revisiting */
+int n = 20;
+int i = 2;
+
+while(i!=n){
+    if(n%i != 0){
+        System.out.println(i);
+    }
+    i++;
+}
+
 }
 }
+
