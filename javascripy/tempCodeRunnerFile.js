@@ -1,3 +1,3 @@
-for (let i=0; i<10; i++){
-//     setTimeout(() => console.log(i),0)
-// }
+function a() {
+    console.log("Hello");
+}

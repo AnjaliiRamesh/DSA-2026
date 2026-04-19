@@ -19,6 +19,7 @@ var i is attached to the function/global scope, not the loop.
 All callbacks reference the same i
  */
 
+/*
 console.log(a);
 
 function a() {
@@ -28,3 +29,5 @@ function a() {
 var a = 10;
 
 console.log(a);
+*/
+
