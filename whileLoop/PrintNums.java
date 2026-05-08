@@ -244,7 +244,7 @@ If the final sum equals the original number → Armstrong number
 
         int sum = 0;
         while(i<n){
-            if(n %i ==0){
+            if(n % i ==0){
                 sum += i;
             
             }
@@ -400,7 +400,7 @@ else{
     System.out.println("not prime");
 }
 */
-/*Priniting prime revisiting */
+/*Priniting prime revisiting 
 int n = 20;
 int i = 2;
 
@@ -410,6 +410,202 @@ while(i!=n){
     }
     i++;
 }
+
+*/
+/*19. Print the Fibonacci series up to n terms.
+The Fibonacci series is a series of elements where the previous two elements are added to generate the next term. It starts with 0 and 1, for example, 0, 1, 1, 2, 3, and so on. 
+*/
+
+
+/*1. Print all numbers from 1 to 10 using a loop 
+int i =1;
+while(i <= 10){
+    System.out.println(i);
+    i++;
+}
+*/
+
+/*2. Print numbers from 10 down to 1 in reverse order 
+int i = 10;
+while(i >=1){
+    System.out.println(i);
+    i--;
+}
+*/
+/*3. Print all even numbers between 1 and 100 
+int i =2;
+while (i<=20){
+    if(i%2==0){
+        System.out.println(i);
+    }
+    i=i+2;
+}
+*/
+/*4. Print all odd numbers between 1 and 100. 
+int i =1;
+while (i<=20){
+    if(i%2!=0){
+        System.out.println(i);
+    }
+    i++;
+}
+*/
+
+/*5. Print the multiplication table of a given number from n × 1 to n × 10 
+int n = 22;
+int i = 1;
+while( i<=10){
+    System.out.println(n*i);
+    i++;
+}
+*/
+/*6. Calculate and print the sum of the first n natural numbers 
+int sum = 0;
+int n = 10;
+int i=1;
+while(i<=n){
+sum = sum + i;
+i++;
+}
+System.out.println(sum);
+
+*/
+/*7. Calculate the sum of all even numbers from 1 up to n. 
+int sum = 0;
+int n = 5;
+int i=2;
+while(i<=n){
+    if(i%2==0){
+    sum = sum + i;
+    }
+i++;
+}
+System.out.println(sum);
+*/
+
+/* 8. Calculate the sum of all odd numbers from 1 up to n
+
+int sum = 0;
+int n = 10;
+int i=1;
+while(i<=n){
+    if(i%2!=0){
+    sum = sum + i;
+    }
+i++;
+}
+System.out.println(sum);
+*/
+/*9. Calculate and print the factorial of a given number 
+int fact = 1;
+int n = 6;
+int i = 1;
+while(i<=n){
+    fact = fact*i;
+    i++;
+}
+System.out.println(fact);
+*/
+
+/*10. Find and print the product of all digits of a given number 
+int prod = 1;
+int n = 153;
+while(n !=0){
+    int ld = n%10;
+    prod = prod *ld;
+    n = n/10;
+
+}
+System.out.println(prod);
+
+*/
+/*11. Count and print the total number of digits in a given number 
+int count = 0;
+int n = 157653;
+while(n !=0){
+    int ld = n%10;
+    count++;
+    n = n/10;
+
+}
+System.out.println(count);
+
+*/
+/*12. Reverse the given number and print the reversed value. 
+
+int rev = 0;
+int n = 153;
+while(n !=0){
+    int ld = n%10;
+    rev = (rev *10) + ld;
+    n = n/10;
+
+}
+System.out.println(rev);
+*/
+/*14. Find and print the sum of digits of the given number 
+
+int sum = 0;
+int n = 153;
+while(n !=0){
+    int ld = n%10;
+    sum = sum + ld;
+    n = n/10;
+
+}
+System.out.println(sum);
+
+*/
+
+/* e.
+13. Check whether the given number is a palindrome 
+
+int original = 1113;
+int dup = original;
+int rev = 0;
+while(dup !=0){
+    int ld = dup%10;
+    rev = rev*10 + ld;
+    dup = dup/10;
+    
+}
+if(rev == original){
+    System.out.println("palindrome");
+}
+else{
+    System.out.println("Not palindrome");
+}
+*/
+
+/*15. Check whether the given number is an Armstrong number 
+
+
+An Armstrong number is a number where:
+Sum of each digit raised to the power of total number of digits = original number
+
+
+int org  =123;
+int dup = org;
+int count=0;
+while (dup!=0){
+    count++;
+    dup = dup/10;
+} 
+int n = org;
+int ans = 0;
+while(n!=0){
+    int ld = n %10;
+    ans += (int)Math.pow(ld, count);
+    n = n/10;
+}
+if(ans == org){
+    System.out.println("armstrong");
+}
+else{
+    System.out.println("not armstrong");
+}
+*/
+/*16. Check whether the given number is a Perfect number. */
 
 }
 }
