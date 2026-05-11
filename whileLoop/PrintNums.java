@@ -896,6 +896,13 @@ System.out.println(hcf);
 */
 
 /*27. Find the LCM (Least Common Multiple) of two given numbers. */
+
+int a = 4;
+int b = 6;
+
+for(int i =1; i<=10; i++){
+    
+}
 }
 }
 
