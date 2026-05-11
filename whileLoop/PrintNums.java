@@ -605,8 +605,297 @@ else{
     System.out.println("not armstrong");
 }
 */
-/*16. Check whether the given number is a Perfect number. */
+/*16. Check whether the given number is a Perfect number. 
+A Perfect Number is a number where:
+Sum of all factors (excluding the number itself) = original number
 
+int n = 28;
+int i = 1;
+int sum =0;
+while(i<n){
+    if(n%i == 0){
+        sum = sum + i;
+    }
+    i++;
+}
+if (sum == n) {
+    System.out.println("perfect number");
+}
+else{
+    System.out.println("not perfect");
+}
+
+
+//Optimised version
+int n = 28;
+int sum = 1; // 1 is always a factor
+
+for(int i = 2; i * i <= n; i++){
+
+    if(n % i == 0){
+
+        sum = sum + i;
+
+        // add paired factor
+        if(i != n / i){
+            sum = sum + (n / i);
+        }
+    }
+}
+// check n!=1 bcoz if n == 1 it will give one but perfect number say the number itself must be excluded as one is not a perfect number
+
+if(sum == n && n != 1){
+    System.out.println("perfect number");
+}
+else{
+    System.out.println("not perfect");
+}
+
+*/
+
+/*
+18. Check whether the given number is a prime number.
+
+int n = 21;
+int i = 2;
+boolean flag = false;
+while(i<n){
+    if(n%i == 0){
+       flag = true;
+       break;
+    }
+    i++;
+}
+if(flag){
+    System.out.println("Not prime");
+}
+else{
+    System.out.println("prime");
+}
+*/
+
+/*17. Print all prime numbers between 1 and 100  
+for(int n = 2; n <= 100; n++){
+
+    boolean isPrime = true;
+
+    for(int i = 2; i * i <= n; i++){
+
+        if(n % i == 0){
+            isPrime = false;
+            break;
+        }
+    }
+
+    if(isPrime){
+        System.out.print(n + " ");
+    }
+}
+
+
+int n = 51;
+boolean flag = false;
+int i =2;
+while(i<n){
+    if(n%i == 0){
+        flag = true;
+    }
+    i++;
+}
+if(flag){
+    System.out.println("not prime");
+}
+else{
+    System.out.println("prime number");
+}
+
+*/
+
+
+/*19. Print the Fibonacci series up to n terms 
+
+int n = 10;
+
+int f = 0;
+int s = 1;
+System.out.print(f + " " + s + " ");
+for(int i =1; i<=n; i++){
+    int t = f+s;
+    System.out.print(t + " ");
+    f = s;
+    s = t;
+}
+
+*/
+/*20. Find and print the sum of the Fibonacci series up to n terms 
+int n = 10;
+
+int f = 0;
+int s = 1;
+int fibSum = f + s;
+for(int i =1; i<=n-2; i++){
+    int t = f+s;
+    fibSum += t;
+    f = s;
+    s = t;
+}
+System.out.println(fibSum);
+
+
+//edge case
+int n = 10;
+
+int f = 0;
+int s = 1;
+
+if(n == 1){
+    System.out.println(f);
+}
+else if(n == 2){
+    System.out.println(f + s);
+}
+else{
+    int fibSum = f + s;
+
+    for(int i = 1; i <= n - 2; i++){
+        int t = f + s;
+        fibSum += t;
+
+        f = s;
+        s = t;
+    }
+
+    System.out.println(fibSum);
+}
+*/
+
+/* 21. Print the square of each number from 1 to n.
+
+int n = 10;
+
+int i =1;
+while(i<=n){
+ System.out.print( i*i + " ");
+ i++;
+}
+
+*/
+/*22. Print the cube of each number from 1 to n.
+int n = 10;
+
+int i =1;
+while(i<=n){
+ System.out.print( i*i*i + " ");
+ i++;
+}
+*/
+
+/*23. Print all numbers between a and b that are divisible by 7 
+
+int a = 7;
+int b = 100;
+
+while(a<=b){
+    if(a%7 == 0){
+        System.out.print(a + " ");
+    }
+    a++;
+}
+// optimised version
+int a = 7;
+int b = 100;
+
+while(a <= b){
+    System.out.print(a + " ");
+    a += 7;
+}
+*/
+
+/*24. Print all factors of the given number 
+int n = 12;
+int i = 1;
+
+while(i <= n){
+    if(n%i == 0){
+        System.out.print(i + " ");
+    }
+    i ++;
+}
+    
+
+//optimised version
+int n = 12;
+int i = 1;
+
+while(i*i <= n){
+    if(n%i == 0){
+        System.out.print(i + " ");
+
+        //will help avoid duplicate values
+        if(i!=n/i){
+            System.out.print(n/i + " ");
+        }
+    }
+    i++;
+}
+*/
+/*25. Find and print the sum of all factors of the given number 
+
+int n = 12;
+int i = 1;
+int sum = 0;
+while(i <= n){
+    if(n%i == 0){
+        sum += i;
+    }
+    i++;
+}
+System.out.println(sum);
+*/
+/*26. Find the HCF (Highest Common Factor) of two given numbers 
+int a = 12;
+int b = 18;
+
+int fact1 = 1;
+int fact2 = 1;
+int hcf = 0;
+for(int i =1; i<=a; i++){
+    if(a%i == 0){
+        fact1 = i;
+    }
+    for(int j = 1; j<=b; j++){
+        if(b%j == 0){
+        fact2 = j;
+    }
+if(fact1 == fact2){
+        hcf = fact1;
+    }
+}
+  
+}
+System.out.println(hcf);
+// HCF ever be greater than the smaller number so instead of looping till a, loop till the smaller number which is a here.
+int a =  20;
+int b = 30;
+int hcf = 1;
+int min;
+
+if(a < b){
+    min = a;
+}
+else{
+    min = b;
+}
+for(int i=1; i<=min; i++){
+        if(a%i == 0 && b%i==0){
+                hcf = i;
+            }
+        }   
+System.out.println(hcf);
+
+*/
+
+/*27. Find the LCM (Least Common Multiple) of two given numbers. */
 }
 }
 
