@@ -895,14 +895,76 @@ System.out.println(hcf);
 
 */
 
-/*27. Find the LCM (Least Common Multiple) of two given numbers. */
+/*27. Find the LCM (Least Common Multiple) of two given numbers. 
 
-int a = 4;
-int b = 6;
-
+//brute force
+int a = 3;
+int b = 5;
+int lcm = Integer.MAX_VALUE ;
 for(int i =1; i<=10; i++){
-    
+    for (int j = 1; j<=10; j++){
+        if(a*i == b*j){         
+                if(a*i <=lcm){
+                    lcm = a*i;
+                }
+
+            break;
+        }
+        
+    }
 }
+System.out.println(lcm);
+
+
+//optimised approach
+int a = 3;
+int b = 5;
+
+int lcm = 0;
+
+for(int i = 1; i <= a * b; i++){
+    for(int j = 1; j <= a * b; j++){
+
+        if(a * i == b * j){
+            lcm = a * i;
+            break;
+        }
+    }
+
+    if(lcm != 0){
+        break;
+    }
+}
+
+System.out.println(lcm);
+*/
+
+/*28. Find the smallest digit in the given number. 
+ int n = 5729;
+ int min = 10;
+
+ while(n!=0){
+    int ld = n%10;
+    if(ld<min){
+        min = ld;
+    }
+    n = n/10;
+ }
+System.out.println(min);
+*/
+/*29. Find the largest digit in the given number. 
+int n = 5729;
+ int max = 0;
+
+ while(n!=0){
+    int ld = n%10;
+    if(ld>max){
+        max = ld;
+    }
+    n = n/10;
+ }
+System.out.println(max);
+*/
 }
 }
 
