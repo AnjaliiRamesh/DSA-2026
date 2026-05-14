@@ -7,3 +7,13 @@ problem
 18. Check whether the given number is a prime number.
 
 factor can never be greater than given number
+
+
+# LCM
+You are given two numbers, and you need to find the smallest number that both numbers can divide completely.
+
+1. Limit => a × b
+because LCM will never be bigger than that.
+2. No need for int lcm = Integer.MAX_VALUE;
+coz we can use int lcm = 0; as The first common multiple is already the LCM.
+No need to find minimum.
