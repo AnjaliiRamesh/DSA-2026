@@ -12,13 +12,13 @@ public class countFreq1 {
             if (arr[i] == arr[i - 1]) {
                 count++;
             } else {
-                System.out.println("count of " + arr[i - 1] + " is: " + count);
+                System.out.print("[" + arr[i - 1] + " , "+ count +"] ");
                 count = 1;
             }
         }
 
         // Print frequency of last element
-        System.out.println("count of " + arr[arr.length - 1] + " is: " + count);
+        System.out.print("[" + arr[arr.length - 1] + " , " + count +"]");
     }
 }
 
